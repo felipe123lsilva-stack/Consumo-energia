@@ -11,14 +11,21 @@ while True:
         print("\nPrograma encerrado. Até logo!")
         break
 
-    try:
 
-        potencia = float(input("Digite a potência do aparelho em watts (W): "))
-        horas_dia = float(input("Digite o tempo médio de uso diário em horas: "))
-    except ValueError:
-        print("Erro: Por favor, digite valores numéricos válidos.")
-        continue
-
+    while True:
+        try:
+            potencia = float(input("Digite a potência do aparelho em watts (W): "))
+            break
+        except ValueError:
+            print("Erro: Por favor, digite um valor numérico válido para a potência.")
+            
+    while True:
+        try:
+            horas_dia = float(input("Digite o tempo médio de uso diário em horas: "))
+            break
+        except ValueError:
+            print("Erro: Por favor, digite valores numéricos válidos.")
+    
     # Cálculo do consumo mensal (considerando 30 dias)
     consumo_mensal = (potencia * horas_dia * 30) / 1000
 
